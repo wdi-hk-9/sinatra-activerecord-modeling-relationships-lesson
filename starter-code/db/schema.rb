@@ -11,21 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727103250) do
+ActiveRecord::Schema.define(version: 20151026064944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "albums", force: :cascade do |t|
-    t.string  "title"
-    t.text    "poster"
-    t.integer "artist_id"
-    t.float   "price"
-  end
-
-  create_table "albums_genres", id: false, force: :cascade do |t|
-    t.integer "album_id", null: false
-    t.integer "genre_id", null: false
+    t.string   "title"
+    t.text     "poster"
+    t.float    "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "artist_id"
   end
 
   create_table "artists", force: :cascade do |t|
