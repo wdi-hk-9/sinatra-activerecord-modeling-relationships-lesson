@@ -1,7 +1,11 @@
 require 'rubygems'
 require 'bundler'
-
 Bundler.require
 
-require File.join(File.dirname(__FILE__), 'app.rb')
-run Sinatra::Application
+require "./models/album"
+require "./models/artist"
+require "./models/genre"
+
+require "./app"
+
+run TunrApp
